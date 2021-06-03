@@ -1,0 +1,83 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e5aab30aa3c2d7908f987599de8e895d363d40199f502d4af3c2b18164ccd855
+
+name:           ccc
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ccc#readme>
+homepage:       https://github.com/githubuser/ccc#readme
+bug-reports:    https://github.com/githubuser/ccc/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ccc
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_ccc
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , concat-classes
+    , concat-examples
+    , concat-inline
+    , concat-known
+    , concat-plugin
+    , concat-satisfy
+    , ghc-prim
+  default-language: Haskell2010
+
+executable ccc
+  main-is: Main.hs
+  other-modules:
+      Paths_ccc
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -fplugin=ConCat.Plugin
+  build-depends:
+      base >=4.7 && <5
+    , ccc
+    , concat-classes
+    , concat-examples
+    , concat-inline
+    , concat-known
+    , concat-plugin
+    , concat-satisfy
+    , ghc-prim
+  default-language: Haskell2010
+
+test-suite ccc-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_ccc
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -fplugin=ConCat.Plugin
+  build-depends:
+      base >=4.7 && <5
+    , ccc
+    , concat-classes
+    , concat-examples
+    , concat-inline
+    , concat-known
+    , concat-plugin
+    , concat-satisfy
+    , ghc-prim
+  default-language: Haskell2010
